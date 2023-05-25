@@ -5,7 +5,6 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { app } from '../firebase.js';
 import TelegramWidget from './TelegramWidget';
-import TelegramLogin from './TelegramLogin.jsx';
 
 function Index() {
 
@@ -179,7 +178,6 @@ function Index() {
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <li><button className="dropdown-item" onClick={handleLogout}><i className="bi bi-box-arrow-right"></i> Cerrar Sesión</button></li>
-                                <li><button className="dropdown-item"><TelegramWidget/></button></li>
                             </ul>
                         </div>
                     </div>
@@ -216,7 +214,7 @@ function Index() {
             <div className="container-xxl w-100 mt-5 d-lg-block col-md-5 col-lg-7 col-xl-6 bg-light rounder shadow">
                 <nav className="navbar navbar-light bg-light">
                     <div className="container-fluid">
-                        <div className="navbar-brand">Utiliza el Bot<TelegramLogin/></div>
+                        <div className="navbar-brand"><TelegramWidget/></div>
                         {error && <p>{error}</p>}
                         <form onSubmit={handleFormSubmit}>
                             <div className="input-group">
